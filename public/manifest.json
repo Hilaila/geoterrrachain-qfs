@@ -1,0 +1,19 @@
+{
+  "name": "GeoTerraChain QFS",
+  "short_name": "GeoTerraChain",
+  "description": "Plateforme africaine de tokenisation RWA sur Pi Network.",
+  "version": "1.0.0",
+  "start_url": "/geoTerraChain-qfs/",
+  "scope": "/geoTerraChain-qfs/",
+  "display": "fullscreen",
+  "orientation": "portrait-primary",
+  "background_color": "#0A0A0A",
+  "theme_color": "#C9A84C",
+  "lang": "fr",
+  "pi_network": {
+    "version": "2.0",
+    "sandbox": false,
+    "permissions": ["username", "payments", "wallet_address"],
+    "display": "fullscreen"
+  }
+}
