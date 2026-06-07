@@ -1,0 +1,34 @@
+{
+  "name": "geoterrrachain-qfs",
+  "version": "1.0.0",
+  "description": "Plateforme africaine de tokenisation d'actifs réels sur Pi Network",
+  "homepage": "https://Hilaila.github.io/geoTerraChain-qfs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "gh-pages": "^6.0.0",
+    "vite": "^5.0.0"
+  },
+  "keywords": [
+    "pi-network",
+    "blockchain",
+    "rwa",
+    "tokenisation",
+    "afrique",
+    "uemoa",
+    "stellar"
+  ],
+  "author": "Hilaila <@Hilaila>",
+  "license": "MIT"
+}

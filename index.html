@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoTerraChain QFS — Notre Terre · Notre Richesse</title>
+    <meta name="description" content="Plateforme africaine de tokenisation d'actifs réels (RWA) sur Pi Network. Tokenisez vos terres et biens immobiliers via GTCπ." />
+    <meta name="keywords" content="Pi Network, tokenisation, RWA, terres, Afrique, UEMOA, GTCπ, blockchain, Côte d'Ivoire" />
+    <meta name="author" content="Hilaila — GeoTerraChain QFS" />
+    <meta property="og:title" content="GeoTerraChain QFS" />
+    <meta property="og:description" content="Tokenisez vos terres africaines sur Pi Network. Notre Terre · Notre Richesse." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://Hilaila.github.io/geoTerraChain-qfs" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#C9A84C" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/png" href="/icons/icon-192x192.png" />
+    <!-- Pi SDK 2.0 OBLIGATOIRE -->
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      #splash {
+        position: fixed; inset: 0;
+        background: #0A0A0A;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        z-index: 9999; transition: opacity 0.6s ease;
+      }
+      #splash.hidden { opacity: 0; pointer-events: none; }
+      .splash-logo {
+        font-family: 'Cinzel', serif;
+        font-size: 22px; color: #C9A84C;
+        letter-spacing: 6px; text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .splash-sub {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 11px; color: #8B6914;
+        letter-spacing: 4px; text-transform: uppercase;
+        margin-bottom: 40px;
+      }
+      .splash-spin {
+        width: 32px; height: 32px;
+        border: 1px solid #8B6914;
+        border-top-color: #C9A84C;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body { background: #0A0A0A; }
+    </style>
+  </head>
+  <body>
+    <!-- Splash screen -->
+    <div id="splash">
+      <div class="splash-logo">GeoTerraChain QFS</div>
+      <div class="splash-sub">Notre Terre · Notre Richesse</div>
+      <div class="splash-spin"></div>
+    </div>
+
+    <!-- Root React -->
+    <div id="root"></div>
+
+    <!-- Pi SDK Init -->
+    <script>
+      window.addEventListener('load', async () => {
+        try {
+          await Pi.init({ version: '2.0', sandbox: false });
+          console.log('[GeoTerraChain] Pi SDK v2.0 initialisé — Mainnet');
+        } catch (e) {
+          console.warn('[GeoTerraChain] Pi SDK non disponible (hors Pi Browser):', e.message);
+        }
+        // Masquer splash après 1.8s
+        setTimeout(() => {
+          const splash = document.getElementById('splash');
+          if (splash) splash.classList.add('hidden');
+        }, 1800);
+      });
+    </script>
+
+    <!-- App React -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
